@@ -7,16 +7,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 class="title">Winnipeg Building Permit Data</h1>
-    <p>
-      This search lets you find building permit information in Winnipeg by
-      address.
-    </p>
+    <header>
+      <h1 class="title">Winnipeg Building Permit Data</h1>
+      <p>
+        This search lets you find building permit information in Winnipeg by
+        address.
+      </p>
+    </header>
 
-    <input class="search" type="text" placeholder="Pls give me the address!" />
-    <button class="search-btn">Search</button>
+    <main>
+      <form>
+        <label for="search">Enter address:</label>
+        <input
+          id="search"
+          class="search"
+          type="text"
+          placeholder="Please enter an address"
+          aria-label="Search address"
+        />
+        <button class="search-btn" type="button">Search</button>
+      </form>
 
-    <div class="results"></div>
+      <div class="results" aria-live="polite"></div>
+    </main>
 
     <script src="script.js"></script>
   </body>
