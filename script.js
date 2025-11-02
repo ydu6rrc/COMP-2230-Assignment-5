@@ -23,14 +23,17 @@ button.addEventListener("click", async function () {
       results.innerHTML = "Please check address";
       return;
     }
-
     results.innerHTML =
+      "Address: " +
       data[0].address +
       "<br>" +
+      "Permit Number: " +
       data[0].permit_number +
       "<br>" +
+      "Status: " +
       data[0].status +
       "<br>" +
+      "Permit Group: " +
       data[0].permit_group;
   } catch (error) {
     console.error("Error:", error);
