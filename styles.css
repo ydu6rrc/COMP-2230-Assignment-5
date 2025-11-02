@@ -1,0 +1,29 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.title {
+  color: black;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.search {
+  padding: 5px;
+  width: 200px;
+}
+
+.search-btn {
+  padding: 5px 10px;
+  background-color: lightgray;
+  border: none;
+  cursor: pointer;
+}
+
+.results {
+  margin-top: 15px;
+  color: black;
+}
