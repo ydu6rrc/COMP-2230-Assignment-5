@@ -10,15 +10,30 @@ button.addEventListener("click", async function () {
 
   const encodedURL = encodeURI(apiUrl);
 
-  const response = await fetch(encodedURL);
-  const data = await response.json();
+  try {
+    const response = await fetch(encodedURL);
 
-  results.innerHTML =
-    data[0].address +
-    "<br>" +
-    data[0].permit_number +
-    "<br>" +
-    data[0].status +
-    "<br>" +
-    data[0].permit_group;
+    if (!response.ok) {
+      throw new Error(`HTTP Error! status: ${response.status}`);
+    }
+
+    const data = await response.json();
+
+    if (data.length === 0) {
+      results.innerHTML = "Please check address";
+      return;
+    }
+
+    results.innerHTML =
+      data[0].address +
+      "<br>" +
+      data[0].permit_number +
+      "<br>" +
+      data[0].status +
+      "<br>" +
+      data[0].permit_group;
+  } catch (error) {
+    console.error("Error:", error);
+    results.innerHTML = "Unexpected error.";
+  }
 });
